@@ -1,0 +1,25 @@
+Task 5 – Breaking and Recovering a Git Project
+
+Step 1: Break the repository
+- Deleted README.md
+- Modified feature.txt
+
+Commands used:
+rm README.md
+echo "Broken content" >> feature.txt
+git add .
+git commit -m "Break repository: delete README and modify files"
+
+Step 2: Inspect repository history
+Commands used:
+git reflog
+
+Step 3: Recover the repository to the previous clean state
+Commands used:
+git reset --hard HEAD@{1}
+
+Result:
+- README.md was restored
+- feature.txt was reverted to its previous state
+- The repository returned to a clean state
+
